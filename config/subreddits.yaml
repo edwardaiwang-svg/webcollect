@@ -1,0 +1,27 @@
+# Default subreddit seeds for anecdote collection, grouped by topic.
+# `cli.py ingest-reddit <corpus> <subreddit> --limit N [--query Q]`.
+# These are sensible general defaults — edit for your corpus.
+
+topics:
+  markets:
+    - stocks
+    - investing
+    - wallstreetbets
+    - SecurityAnalysis
+  tech:
+    - technology
+    - hardware
+    - MachineLearning
+    - LocalLLaMA
+  consumer:
+    - BuyItForLife
+    - ProductReviews
+    - gadgets
+  general:
+    - AskReddit
+    - OutOfTheLoop
+
+defaults:
+  limit: 50
+  sort: new            # new | hot | top
+  comment_expand: 0    # replace_more limit; 0 = top-level only, None-equivalent via higher N

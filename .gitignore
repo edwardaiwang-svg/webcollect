@@ -1,0 +1,24 @@
+# secrets
+.env
+
+# python env
+.venv/
+__pycache__/
+*.pyc
+
+# corpora & generated stores (machine-local, never committed)
+corpus/
+*.duckdb
+*.duckdb.wal
+*.sqlite
+*.sqlite-*
+*.pkl
+raw/
+exports/
+
+# config backups created by install.sh
+*.bak.*
+
+# stale scraper output / OS files
+.firecrawl/
+.DS_Store

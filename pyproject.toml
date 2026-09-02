@@ -1,0 +1,32 @@
+[project]
+name = "webcollect"
+version = "0.1.0"
+description = "Portable, provenance-first web data-collection & consolidation pipeline (Claude Code skills)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # structured + vector stores
+    "duckdb>=1.1",
+    "sqlite-vec>=0.1.6",
+    # consolidation
+    "tiktoken>=0.8",
+    "pydantic>=2.9",
+    "datasketch>=1.6",
+    "numpy>=2.0",
+    # embeddings + clustering (heavy: pulls torch)
+    "sentence-transformers>=3.3",
+    "scikit-learn>=1.5",
+    # retrieval / verification
+    "rank-bm25>=0.2.2",
+    "rapidfuzz>=3.10",
+    # acquisition
+    "praw>=7.8",
+    "httpx>=0.28",
+    "beautifulsoup4>=4.12",
+    "selectolax>=0.3.21",
+    "pyyaml>=6.0",
+    # output
+    "openpyxl>=3.1",
+]
+
+[tool.uv]
+# generate uv.lock with: uv pip compile pyproject.toml -o uv.lock

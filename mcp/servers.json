@@ -1,0 +1,3 @@
+{
+  "_comment": "MCP server definitions carried by this repo for portability. install.sh jq-merges this into ~/.claude.json .mcpServers (never clobbering existing entries). v1 adds NONE — the skills use Claude Code's built-in tools. Add servers here if a future capability needs one."
+}

@@ -1,0 +1,49 @@
+# Source reputation + retrieval tuning (edit freely).
+# tier: 1 official/primary .. 5 anonymous social  (lower = higher precedence in conflicts)
+
+tiers:
+  1:  # primary / official
+    - "*.gov"
+    - "sec.gov"
+    - "data.sec.gov"
+    - "federalreserve.gov"
+    - "stlouisfed.org"          # FRED
+    - "bls.gov"
+    - "census.gov"
+    - "worldbank.org"
+    - "oecd.org"
+    - "*.edu"                    # peer-reviewed / academic
+  2:  # reputable press / analysts / company IR
+    - "reuters.com"
+    - "apnews.com"
+    - "bloomberg.com"
+    - "ft.com"
+    - "wsj.com"
+    - "*.investor.*"            # company investor-relations
+  3:  # aggregators / established blogs / trade pubs
+    - "*"                        # default for unknown reputable web
+  4:  # UGC scraped / X / unverified
+    - "x.com"
+    - "twitter.com"
+    - "nitter.*"
+  5:  # anonymous social
+    - "reddit.com"
+    - "*.reddit.com"
+
+deny:                            # penalize/skip (content farms, spam mills, mirrors)
+  - "*.blogspot.com"
+  - "ezinearticles.com"
+  - "answers.*"
+
+scoring:
+  weights:
+    tier: 0.40
+    recency: 0.20
+    corroboration: 0.20
+    content_quality: 0.10
+    relevance: 0.10
+  recency_tau_days:              # exp(-age/tau) by topic class
+    markets: 7
+    news: 30
+    macro: 365
+    academic: 365

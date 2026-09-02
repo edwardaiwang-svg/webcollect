@@ -1,0 +1,27 @@
+# Primary-first resolver: metric -> canonical primary endpoint.
+# `cli.py ingest-stats` pulls the primary; aggregators are cross-checked against it.
+# Edit/extend for your corpus. (Defaults are macro + a couple of filings examples.)
+
+metrics:
+  us_unemployment_rate:
+    source: fred
+    series_id: UNRATE
+    units: percent
+  us_cpi_all_urban:
+    source: fred
+    series_id: CPIAUCSL
+    units: index
+  us_real_gdp:
+    source: fred
+    series_id: GDPC1
+    units: billions_chained_2017_usd
+  fed_funds_rate:
+    source: fred
+    series_id: FEDFUNDS
+    units: percent
+  # SEC XBRL example (CIK is zero-padded internally): Apple total revenue
+  aapl_revenue:
+    source: sec
+    cik: "320193"
+    concept: RevenueFromContractWithCustomerExcludingAssessedTax
+    taxonomy: us-gaap
